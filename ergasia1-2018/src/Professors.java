@@ -1,3 +1,6 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 
 public class Professors extends Users{
 
@@ -5,11 +8,13 @@ public class Professors extends Users{
 	private Courses course;
 	
 	
-	public Professors(String username, String name, String surname, String dept,int AFM) {
+	public Professors(String username, String name, String surname, String dept,int AFM , int salary) {
 		super(username, name, surname, dept);
 		setProfessorAFM(AFM);
+		setSalary(salary);
 		System.out.println("New Professor created!");
 	}
+	
 
 	public int getProfessorAFM() {
 		return professorAFM;

@@ -1,3 +1,6 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 
 public class Users {
 
@@ -15,6 +18,33 @@ public class Users {
 		counter+=1;
 		System.out.println("New User created!");
 	}
+	//Alternative Constructor
+	public Users (){
+		System.out.println("Username :");
+		this.username = setString();
+		
+		System.out.println("Name :");
+		this.name = setString();
+		
+		System.out.println("Surname :");
+		this.surname = setString();
+		
+		System.out.println("Department :");
+		this.department = setString();	
+		counter +=1;
+	}
+	public String setString(){
+		Scanner input = new Scanner(System.in);	
+		try{
+			return input.nextLine();
+		}
+		catch(InputMismatchException e) {
+			
+			System.out.println("Input Exception! Try again!");
+			return setString();
+		}
+	}
+	
 	//Getters
 	public String getUsername(){
 		return username;
